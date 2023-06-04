@@ -1,39 +1,167 @@
-import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
+import {
+  Environment,
+  OrbitControls,
+  Preload,
+  useGLTF,
+} from "@react-three/drei";
+import { Canvas, useLoader } from "@react-three/fiber";
 import { Suspense, useEffect, useState } from "react";
 import CanvasLoader from "../Loader";
+import * as THREE from "three";
 
 const Room = ({ isMobile }: { isMobile?: boolean }) => {
-  const computer = useGLTF("./MonsantoHouse/merge.gltf");
+  console.log(isMobile, "isMobile");
+  const room: any = useGLTF("./MonsantoHouse/merge.gltf");
+  const floorColorMap = useLoader(
+    THREE.TextureLoader,
+    "/public/floor_tiles_06/FloorsCheckerboard_S_Diffuse.jpg"
+  );
+  const floorNormalMap = useLoader(
+    THREE.TextureLoader,
+    "/public/floor_tiles_06/FloorsCheckerboard_S_Normal.jpg"
+  );
+
+  const { nodes } = room;
+
+  const FlowMeshPhongMaterial = (
+    <meshPhongMaterial
+      side={THREE.DoubleSide}
+      map={floorColorMap}
+      normalMap={floorNormalMap}
+    ></meshPhongMaterial>
+  );
+  const GlassMeshPhysicalMaterial = (
+    <meshPhysicalMaterial
+      color={0xffffff}
+      transmission={0.5}
+      opacity={1}
+      metalness={0}
+      roughness={0}
+      ior={1.52}
+      thickness={0.8}
+      specularIntensity={1}
+      specularColor="#ffffff"
+      lightMapIntensity={1}
+    ></meshPhysicalMaterial>
+  );
 
   return (
-    <mesh>
-      <hemisphereLight intensity={0.15} groundColor="black" />
-      <spotLight
-        position={[-20, 50, 10]}
-        angle={0.12}
-        penumbra={1}
-        intensity={1}
-        castShadow
-        shadow-mapSize={1024}
+    <group dispose={null}>
+      <mesh
+        geometry={nodes.model_1.geometry}
+        material={nodes.model_1.material}
+        rotation={[Math.PI / 2, 0, 0]}
       />
-      <spotLight
-        position={[10, 10, 10]}
-        angle={0.2}
-        penumbra={1}
-        intensity={1}
-        castShadow
-        shadow-mapSize={1024}
+      <mesh
+        geometry={nodes.model_0.geometry}
+        material={nodes.model_0.material}
+        rotation={[Math.PI / 2, 0, 0]}
       />
-      <pointLight intensity={1} />
-      <primitive
-        object={computer.scene}
-        scale={isMobile ? 0.6 : 0.75}
-        position={isMobile ? [0, -1, 0] : [0, -1, 0]}
-        // rotation={[-0.01, -0.2, -0.1]}
-        rotation={[0, 0, 0]}
+      <mesh geometry={nodes.model_2.geometry} rotation={[Math.PI / 2, 0, 0]} />
+      <mesh
+        geometry={nodes.model_3.geometry}
+        material={nodes.model_3.material}
+        rotation={[Math.PI / 2, 0, 0]}
       />
-    </mesh>
+      <mesh
+        geometry={nodes.model_4.geometry}
+        material={nodes.model_4.material}
+        rotation={[Math.PI / 2, 0, 0]}
+      />
+      <mesh
+        geometry={nodes.model_5.geometry}
+        material={nodes.model_5.material}
+        rotation={[Math.PI / 2, 0, 0]}
+      />
+      <mesh
+        geometry={nodes.model_6.geometry}
+        material={nodes.model_6.material}
+        rotation={[Math.PI / 2, 0, 0]}
+      />
+      <mesh
+        geometry={nodes.model_7.geometry}
+        rotation={[Math.PI / 2, 0, 0]}
+      ></mesh>
+      <mesh geometry={nodes.model_8.geometry} rotation={[Math.PI / 2, 0, 0]} />
+      <mesh
+        geometry={nodes.model_9.geometry}
+        material={nodes.model_9.material}
+        rotation={[Math.PI / 2, 0, 0]}
+      />
+      <mesh
+        geometry={nodes.model_10.geometry}
+        material={nodes.model_10.material}
+        rotation={[Math.PI / 2, 0, 0]}
+      />
+      <mesh geometry={nodes.model_11.geometry} rotation={[Math.PI / 2, 0, 0]}>
+        {FlowMeshPhongMaterial}
+      </mesh>
+      <mesh
+        geometry={nodes.model_12.geometry}
+        rotation={[Math.PI / 2, 0, 0]}
+      ></mesh>
+      <mesh geometry={nodes.model_13.geometry} rotation={[Math.PI / 2, 0, 0]}>
+        {FlowMeshPhongMaterial}
+      </mesh>
+      <mesh
+        geometry={nodes.model_14.geometry}
+        material={nodes.model_14.material}
+        rotation={[Math.PI / 2, 0, 0]}
+      />
+      <mesh
+        geometry={nodes.model_15.geometry}
+        material={nodes.model_15.material}
+        rotation={[Math.PI / 2, 0, 0]}
+      />
+      <mesh geometry={nodes.model_16.geometry} rotation={[Math.PI / 2, 0, 0]}>
+        {FlowMeshPhongMaterial}
+      </mesh>
+      <mesh geometry={nodes.model_17.geometry} rotation={[Math.PI / 2, 0, 0]}>
+        {FlowMeshPhongMaterial}
+      </mesh>
+      <mesh geometry={nodes.model_18.geometry} rotation={[Math.PI / 2, 0, 0]}>
+        {FlowMeshPhongMaterial}
+      </mesh>
+      <mesh
+        geometry={nodes.model_19.geometry}
+        material={nodes.model_19.material}
+        rotation={[Math.PI / 2, 0, 0]}
+      />
+      <mesh
+        geometry={nodes.model_20.geometry}
+        material={nodes.model_20.material}
+        rotation={[Math.PI / 2, 0, 0]}
+      />
+      <mesh
+        geometry={nodes.model_21.geometry}
+        material={nodes.model_21.material}
+        rotation={[Math.PI / 2, 0, 0]}
+      />
+      <mesh geometry={nodes.model_22.geometry} rotation={[Math.PI / 2, 0, 0]} />
+      <mesh geometry={nodes.model_23.geometry} rotation={[Math.PI / 2, 0, 0]}>
+        {FlowMeshPhongMaterial}
+      </mesh>
+      <mesh
+        geometry={nodes.model_24.geometry}
+        material={nodes.model_24.material}
+        rotation={[Math.PI / 2, 0, 0]}
+      />
+      <mesh geometry={nodes.model_25.geometry} rotation={[Math.PI / 2, 0, 0]}>
+        {FlowMeshPhongMaterial}
+      </mesh>
+      <mesh geometry={nodes.model_26.geometry} rotation={[Math.PI / 2, 0, 0]}>
+        {FlowMeshPhongMaterial}
+      </mesh>
+      <mesh geometry={nodes.model_27.geometry} rotation={[Math.PI / 2, 0, 0]}>
+        {GlassMeshPhysicalMaterial}
+      </mesh>
+      <mesh geometry={nodes.model_28.geometry} rotation={[Math.PI / 2, 0, 0]}>
+        {GlassMeshPhysicalMaterial}
+      </mesh>
+      <mesh geometry={nodes.model_29.geometry} rotation={[Math.PI / 2, 0, 0]}>
+        {GlassMeshPhysicalMaterial}
+      </mesh>
+    </group>
   );
 };
 
@@ -65,9 +193,18 @@ const RoomCanvas = () => {
       frameloop="demand"
       shadows
       dpr={[1, 2]}
-      camera={{ position: [20, 3, 5], fov: 25 }}
+      camera={{ position: [6, 1, 2], fov: 75 }}
       gl={{ preserveDrawingBuffer: true }}
     >
+      <Environment preset="forest" />
+      <spotLight
+        position={[-20, 50, 10]}
+        angle={0.12}
+        penumbra={1}
+        intensity={1}
+        castShadow
+        shadow-mapSize={1024}
+      />
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
           enableZoom={false}
