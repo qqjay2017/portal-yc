@@ -28,33 +28,33 @@ import {
 export const navLinks = [
   {
     id: "about",
-    title: "About",
+    title: "关于我们",
   },
   {
     id: "work",
-    title: "Work",
+    title: "产品中心",
   },
   {
     id: "contact",
-    title: "Contact",
+    title: "联系我们",
   },
 ];
 
 const services = [
   {
-    title: "Web Developer",
+    title: "按需定制",
     icon: web,
   },
   {
-    title: "React Native Developer",
+    title: "生态环保",
     icon: mobile,
   },
   {
-    title: "Backend Developer",
+    title: "自主研发",
     icon: backend,
   },
   {
-    title: "Content Creator",
+    title: "高性价比",
     icon: creator,
   },
 ];
