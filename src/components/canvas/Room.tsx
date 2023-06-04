@@ -140,7 +140,6 @@ const RoomCanvas = () => {
       camera={{ position: [6, 1, 2], fov: 75 }}
       gl={{ preserveDrawingBuffer: true }}
     >
-      <Environment preset="forest" />
       <spotLight
         position={[-20, 50, 10]}
         angle={0.12}
