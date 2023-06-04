@@ -14,11 +14,11 @@ const Room = ({ isMobile }: { isMobile?: boolean }) => {
   const room: any = useGLTF("./MonsantoHouse/merge.gltf");
   const floorColorMap = useLoader(
     THREE.TextureLoader,
-    "/public/floor_tiles_06/FloorsCheckerboard_S_Diffuse.jpg"
+    "/floor_tiles_06/FloorsCheckerboard_S_Diffuse.jpg"
   );
   const floorNormalMap = useLoader(
     THREE.TextureLoader,
-    "/public/floor_tiles_06/FloorsCheckerboard_S_Normal.jpg"
+    "/floor_tiles_06/FloorsCheckerboard_S_Normal.jpg"
   );
 
   const { nodes } = room;
@@ -47,52 +47,20 @@ const Room = ({ isMobile }: { isMobile?: boolean }) => {
 
   return (
     <group dispose={null}>
-      <mesh
-        geometry={nodes.model_1.geometry}
-        material={nodes.model_1.material}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.model_0.geometry}
-        material={nodes.model_0.material}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
+      <mesh geometry={nodes.model_1.geometry} rotation={[Math.PI / 2, 0, 0]} />
+      <mesh geometry={nodes.model_0.geometry} rotation={[Math.PI / 2, 0, 0]} />
       <mesh geometry={nodes.model_2.geometry} rotation={[Math.PI / 2, 0, 0]} />
-      <mesh
-        geometry={nodes.model_3.geometry}
-        material={nodes.model_3.material}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.model_4.geometry}
-        material={nodes.model_4.material}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.model_5.geometry}
-        material={nodes.model_5.material}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.model_6.geometry}
-        material={nodes.model_6.material}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
+      <mesh geometry={nodes.model_3.geometry} rotation={[Math.PI / 2, 0, 0]} />
+      <mesh geometry={nodes.model_4.geometry} rotation={[Math.PI / 2, 0, 0]} />
+      <mesh geometry={nodes.model_5.geometry} rotation={[Math.PI / 2, 0, 0]} />
+      <mesh geometry={nodes.model_6.geometry} rotation={[Math.PI / 2, 0, 0]} />
       <mesh
         geometry={nodes.model_7.geometry}
         rotation={[Math.PI / 2, 0, 0]}
       ></mesh>
       <mesh geometry={nodes.model_8.geometry} rotation={[Math.PI / 2, 0, 0]} />
-      <mesh
-        geometry={nodes.model_9.geometry}
-        material={nodes.model_9.material}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.model_10.geometry}
-        material={nodes.model_10.material}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
+      <mesh geometry={nodes.model_9.geometry} rotation={[Math.PI / 2, 0, 0]} />
+      <mesh geometry={nodes.model_10.geometry} rotation={[Math.PI / 2, 0, 0]} />
       <mesh geometry={nodes.model_11.geometry} rotation={[Math.PI / 2, 0, 0]}>
         {FlowMeshPhongMaterial}
       </mesh>
@@ -103,16 +71,8 @@ const Room = ({ isMobile }: { isMobile?: boolean }) => {
       <mesh geometry={nodes.model_13.geometry} rotation={[Math.PI / 2, 0, 0]}>
         {FlowMeshPhongMaterial}
       </mesh>
-      <mesh
-        geometry={nodes.model_14.geometry}
-        material={nodes.model_14.material}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.model_15.geometry}
-        material={nodes.model_15.material}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
+      <mesh geometry={nodes.model_14.geometry} rotation={[Math.PI / 2, 0, 0]} />
+      <mesh geometry={nodes.model_15.geometry} rotation={[Math.PI / 2, 0, 0]} />
       <mesh geometry={nodes.model_16.geometry} rotation={[Math.PI / 2, 0, 0]}>
         {FlowMeshPhongMaterial}
       </mesh>
@@ -122,30 +82,14 @@ const Room = ({ isMobile }: { isMobile?: boolean }) => {
       <mesh geometry={nodes.model_18.geometry} rotation={[Math.PI / 2, 0, 0]}>
         {FlowMeshPhongMaterial}
       </mesh>
-      <mesh
-        geometry={nodes.model_19.geometry}
-        material={nodes.model_19.material}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.model_20.geometry}
-        material={nodes.model_20.material}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.model_21.geometry}
-        material={nodes.model_21.material}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
+      <mesh geometry={nodes.model_19.geometry} rotation={[Math.PI / 2, 0, 0]} />
+      <mesh geometry={nodes.model_20.geometry} rotation={[Math.PI / 2, 0, 0]} />
+      <mesh geometry={nodes.model_21.geometry} rotation={[Math.PI / 2, 0, 0]} />
       <mesh geometry={nodes.model_22.geometry} rotation={[Math.PI / 2, 0, 0]} />
       <mesh geometry={nodes.model_23.geometry} rotation={[Math.PI / 2, 0, 0]}>
         {FlowMeshPhongMaterial}
       </mesh>
-      <mesh
-        geometry={nodes.model_24.geometry}
-        material={nodes.model_24.material}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
+      <mesh geometry={nodes.model_24.geometry} rotation={[Math.PI / 2, 0, 0]} />
       <mesh geometry={nodes.model_25.geometry} rotation={[Math.PI / 2, 0, 0]}>
         {FlowMeshPhongMaterial}
       </mesh>
