@@ -16,7 +16,7 @@ const Hero = () => {
 
         <div>
           <h1 className={`${styles.heroHeadText} text-white`}>
-            我们是 <span className="text-[#915EFF]">云舱科技</span>
+            我们是 <span className="text-[#915EFF]">XX科技</span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
             原创设计 精致工艺 <br className="sm:block hidden" />

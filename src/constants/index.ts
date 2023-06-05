@@ -19,10 +19,8 @@ import {
   starbucks,
   tesla,
   shopify,
-  carrent,
-  jobit,
-  tripguide,
   threejs,
+  taobao,
 } from "../assets";
 
 export const navLinks = [
@@ -116,149 +114,126 @@ const technologies = [
 
 const experiences = [
   {
-    title: "React.js Developer",
-    company_name: "Starbucks",
+    title: "公司成立",
+    company_name: "XXXX",
     icon: starbucks,
     iconBg: "#383E56",
-    date: "March 2020 - April 2021",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
+    date: "2021年",
+    points: ["xxxxxx", "xxxxxx", "xxxxxx", "xxxxxx"],
   },
   {
-    title: "React Native Developer",
-    company_name: "Tesla",
+    title: "公司发展",
+    company_name: "xxxxx",
     icon: tesla,
     iconBg: "#E6DEDD",
-    date: "Jan 2021 - Feb 2022",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
+    date: "2022年",
+    points: ["xxxxxx", "xxxxxx", "xxxxxx", "xxxxxx"],
   },
   {
-    title: "Web Developer",
-    company_name: "Shopify",
+    title: "公司壮大",
+    company_name: "xxx",
     icon: shopify,
     iconBg: "#383E56",
-    date: "Jan 2022 - Jan 2023",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
+    date: "2022年",
+    points: ["xxxxxx", "xxxxxx", "xxxxxx", "xxxxxx"],
   },
   {
-    title: "Full stack Developer",
-    company_name: "Meta",
+    title: "公司xx",
+    company_name: "XX",
     icon: meta,
     iconBg: "#E6DEDD",
-    date: "Jan 2023 - Present",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
+    date: "2023年",
+    points: ["xxxxxx", "xxxxxx", "xxxxxx", "xxxxxx"],
   },
 ];
 
 const testimonials = [
   {
     testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Sara Lee",
+      "很好用,很好用,很好用,很好用,很好用,很好用,很好用,很好用,很好用,很好用,",
+    name: "老王",
     designation: "CFO",
-    company: "Acme Co",
+    company: "XXX旅游区管理员",
     image: "https://randomuser.me/api/portraits/women/4.jpg",
   },
   {
     testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: "Chris Brown",
+      "很好用,很好用,很好用,很好用,很好用,很好用,很好用,很好用,很好用,很好用,",
+    name: "老张",
     designation: "COO",
-    company: "DEF Corp",
+    company: "XXX登山爱好者",
     image: "https://randomuser.me/api/portraits/men/5.jpg",
   },
   {
     testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
+      "很好用,很好用,很好用,很好用,很好用,很好用,很好用,很好用,很好用,很好用,",
+    name: "老李",
     designation: "CTO",
-    company: "456 Enterprises",
+    company: "XXX游泳爱好者",
     image: "https://randomuser.me/api/portraits/women/6.jpg",
   },
 ];
 
 const projects = [
   {
-    name: "Car Rent",
-    description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+    name: "产品1",
+    description: "这个产品xxxxxxxxxxxxxxxxxx,这个产品xxxxxxxxxxxxxxxxxx,",
     tags: [
       {
-        name: "react",
+        name: "休闲",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "年轻人",
         color: "green-text-gradient",
       },
       {
-        name: "tailwind",
+        name: "性价比",
         color: "pink-text-gradient",
       },
     ],
-    image: carrent,
-    source_code_link: "https://github.com/",
+    image: taobao,
+    source_code_link: "https://baidu.com/",
   },
   {
-    name: "Job IT",
-    description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+    name: "产品2",
+    description: "这个产品xxxxxxxxxxxxxxxxxx,这个产品xxxxxxxxxxxxxxxxxx,",
     tags: [
       {
-        name: "react",
+        name: "便携",
         color: "blue-text-gradient",
       },
       {
-        name: "restapi",
+        name: "美观",
         color: "green-text-gradient",
       },
       {
-        name: "scss",
+        name: "性价比",
         color: "pink-text-gradient",
       },
     ],
-    image: jobit,
-    source_code_link: "https://github.com/",
+    image: taobao,
+    source_code_link: "https://baidu.com/",
   },
   {
-    name: "Trip Guide",
-    description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+    name: "产品3",
+    description: "这个产品xxxxxxxxxxxxxxxxxx,这个产品xxxxxxxxxxxxxxxxxx,",
     tags: [
       {
-        name: "nextjs",
+        name: "高配置",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
+        name: "面积大",
         color: "green-text-gradient",
       },
       {
-        name: "css",
+        name: "舒适",
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
+    image: taobao,
+    source_code_link: "https://baidu.com/",
   },
 ];
 
