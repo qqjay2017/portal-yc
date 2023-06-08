@@ -1,16 +1,17 @@
-import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
-import { Canvas, useLoader } from "@react-three/fiber";
+import { OrbitControls, useGLTF } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
 import { Suspense, useEffect, useState } from "react";
 import CanvasLoader from "../Loader";
 
 const Room = ({ isMobile }: { isMobile?: boolean }) => {
-  const room: any = useGLTF("./MonsantoHouse/001.gltf");
+  const room: any = useGLTF("./MonsantoHouse/003.gltf");
 
   const { nodes, materials } = room;
+  console.log(isMobile, "isMobile");
 
   return (
-    <group dispose={null} position={[0, -1, 0]}>
-      <mesh
+    <group dispose={null} position={[0, -1, 0]} scale={2}>
+      {/* <mesh
         geometry={nodes.model_0.geometry}
         material={materials["Default OBJ.002"]}
         rotation={[Math.PI / 2, 0, 0]}
@@ -143,6 +144,66 @@ const Room = ({ isMobile }: { isMobile?: boolean }) => {
       <mesh
         geometry={nodes.model_26.geometry}
         material={materials["Default OBJ.027"]}
+        rotation={[Math.PI / 2, 0, 0]}
+      />
+      <mesh
+        geometry={nodes.model_27.geometry}
+        material={materials["Default OBJ.021"]}
+        rotation={[Math.PI / 2, 0, 0]}
+      />
+      <mesh
+        geometry={nodes.model_28.geometry}
+        material={materials["Default OBJ.030"]}
+        rotation={[Math.PI / 2, 0, 0]}
+      />
+      <mesh
+        geometry={nodes.model_29.geometry}
+        material={materials["Default OBJ.030"]}
+        rotation={[Math.PI / 2, 0, 0]}
+      /> */}
+      <mesh
+        geometry={nodes.model_10.geometry}
+        material={materials["Default OBJ.010"]}
+        rotation={[Math.PI / 2, 0, 0]}
+      />
+      <mesh
+        geometry={nodes.model_14.geometry}
+        material={materials["Default OBJ.015"]}
+        rotation={[Math.PI / 2, 0, 0]}
+      />
+      <mesh
+        geometry={nodes.model_15.geometry}
+        material={materials["Default OBJ.009"]}
+        rotation={[Math.PI / 2, 0, 0]}
+      />
+      <mesh
+        geometry={nodes.model_16.geometry}
+        material={materials["Default OBJ.017"]}
+        rotation={[Math.PI / 2, 0, 0]}
+      />
+      <mesh
+        geometry={nodes.model_17.geometry}
+        material={materials["Default OBJ.018"]}
+        rotation={[Math.PI / 2, 0, 0]}
+      />
+      <mesh
+        geometry={nodes.model_18.geometry}
+        material={materials["Default OBJ.019"]}
+        rotation={[Math.PI / 2, 0, 0]}
+      />
+      <mesh
+        geometry={nodes.model_19.geometry}
+        material={materials["Default OBJ.020"]}
+        rotation={[Math.PI / 2, 0, 0]}
+      />
+      <mesh
+        geometry={nodes.model_20.geometry}
+        material={materials["Default OBJ.031"]}
+        rotation={[Math.PI / 2, 0, 0]}
+      />
+      <mesh
+        geometry={nodes.model_24.geometry}
+        material={materials["Default OBJ.025"]}
         rotation={[Math.PI / 2, 0, 0]}
       />
       <mesh
