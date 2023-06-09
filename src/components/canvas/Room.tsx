@@ -1,224 +1,109 @@
 import { OrbitControls, useGLTF } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useLoader } from "@react-three/fiber";
 import { Suspense, useEffect, useState } from "react";
 import CanvasLoader from "../Loader";
 
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 const Room = ({ isMobile }: { isMobile?: boolean }) => {
-  const room: any = useGLTF("./MonsantoHouse/003.gltf");
-
-  const { nodes, materials } = room;
-  console.log(isMobile, "isMobile");
+  const glb: any = useLoader(GLTFLoader, "/MonsantoHouse/005.glb");
+  const { scene, nodes, material } = glb;
+  console.log(isMobile, scene, "isMobile");
 
   return (
-    <group dispose={null} position={[0, -1, 0]} scale={2}>
-      {/* <mesh
+    <group
+      dispose={null}
+      position={[0, -2, 0]}
+      rotation={[-Math.PI / 2, 0, 0]}
+      scale={isMobile ? 1.4 : 2}
+    >
+      <mesh
         geometry={nodes.model_0.geometry}
-        material={materials["Default OBJ.002"]}
+        material={nodes.model_0.material}
         rotation={[Math.PI / 2, 0, 0]}
       />
       <mesh
         geometry={nodes.model_1.geometry}
-        material={materials["Default OBJ.002"]}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.model_2.geometry}
-        material={materials["Default OBJ.002"]}
+        material={nodes.model_1.material}
         rotation={[Math.PI / 2, 0, 0]}
       />
       <mesh
         geometry={nodes.model_3.geometry}
-        material={materials["Default OBJ.002"]}
+        material={nodes.model_3.material}
         rotation={[Math.PI / 2, 0, 0]}
       />
       <mesh
         geometry={nodes.model_4.geometry}
-        material={materials["Default OBJ.005"]}
+        material={nodes.model_4.material}
         rotation={[Math.PI / 2, 0, 0]}
       />
       <mesh
         geometry={nodes.model_5.geometry}
-        material={materials["Default OBJ.005"]}
+        material={nodes.model_5.material}
         rotation={[Math.PI / 2, 0, 0]}
       />
       <mesh
         geometry={nodes.model_6.geometry}
-        material={materials["Default OBJ.005"]}
+        material={nodes.model_6.material}
         rotation={[Math.PI / 2, 0, 0]}
       />
       <mesh
         geometry={nodes.model_7.geometry}
-        material={materials["Default OBJ.005"]}
+        material={nodes.model_7.material}
         rotation={[Math.PI / 2, 0, 0]}
       />
       <mesh
         geometry={nodes.model_8.geometry}
-        material={materials["Default OBJ.005"]}
+        material={nodes.model_8.material}
         rotation={[Math.PI / 2, 0, 0]}
       />
       <mesh
         geometry={nodes.model_9.geometry}
-        material={materials["Default OBJ.009"]}
+        material={nodes.model_9.material}
         rotation={[Math.PI / 2, 0, 0]}
       />
       <mesh
         geometry={nodes.model_10.geometry}
-        material={materials["Default OBJ.010"]}
+        material={nodes.model_10.material}
         rotation={[Math.PI / 2, 0, 0]}
       />
       <mesh
         geometry={nodes.model_11.geometry}
-        material={materials["Default OBJ.011"]}
+        material={nodes.model_11.material}
         rotation={[Math.PI / 2, 0, 0]}
       />
       <mesh
         geometry={nodes.model_12.geometry}
-        material={materials["Default OBJ.012"]}
+        material={nodes.model_12.material}
         rotation={[Math.PI / 2, 0, 0]}
       />
       <mesh
         geometry={nodes.model_13.geometry}
-        material={materials["Default OBJ.014"]}
+        material={nodes.model_13.material}
         rotation={[Math.PI / 2, 0, 0]}
       />
       <mesh
         geometry={nodes.model_14.geometry}
-        material={materials["Default OBJ.015"]}
+        material={nodes.model_14.material}
         rotation={[Math.PI / 2, 0, 0]}
       />
       <mesh
         geometry={nodes.model_15.geometry}
-        material={materials["Default OBJ.009"]}
+        material={nodes.model_15.material}
         rotation={[Math.PI / 2, 0, 0]}
       />
       <mesh
         geometry={nodes.model_16.geometry}
-        material={materials["Default OBJ.017"]}
+        material={nodes.model_16.material}
         rotation={[Math.PI / 2, 0, 0]}
       />
       <mesh
         geometry={nodes.model_17.geometry}
-        material={materials["Default OBJ.018"]}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.model_18.geometry}
-        material={materials["Default OBJ.019"]}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.model_19.geometry}
-        material={materials["Default OBJ.020"]}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.model_20.geometry}
-        material={materials["Default OBJ.031"]}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.model_21.geometry}
-        material={materials["Default OBJ.022"]}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.model_22.geometry}
-        material={materials["Default OBJ.023"]}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.model_23.geometry}
-        material={materials["Default OBJ.024"]}
+        material={nodes.model_17.material}
         rotation={[Math.PI / 2, 0, 0]}
       />
       <mesh
         geometry={nodes.model_24.geometry}
-        material={materials["Default OBJ.025"]}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.model_25.geometry}
-        material={materials["Default OBJ.026"]}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.model_26.geometry}
-        material={materials["Default OBJ.027"]}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.model_27.geometry}
-        material={materials["Default OBJ.021"]}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.model_28.geometry}
-        material={materials["Default OBJ.030"]}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.model_29.geometry}
-        material={materials["Default OBJ.030"]}
-        rotation={[Math.PI / 2, 0, 0]}
-      /> */}
-      <mesh
-        geometry={nodes.model_10.geometry}
-        material={materials["Default OBJ.010"]}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.model_14.geometry}
-        material={materials["Default OBJ.015"]}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.model_15.geometry}
-        material={materials["Default OBJ.009"]}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.model_16.geometry}
-        material={materials["Default OBJ.017"]}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.model_17.geometry}
-        material={materials["Default OBJ.018"]}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.model_18.geometry}
-        material={materials["Default OBJ.019"]}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.model_19.geometry}
-        material={materials["Default OBJ.020"]}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.model_20.geometry}
-        material={materials["Default OBJ.031"]}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.model_24.geometry}
-        material={materials["Default OBJ.025"]}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.model_27.geometry}
-        material={materials["Default OBJ.021"]}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.model_28.geometry}
-        material={materials["Default OBJ.030"]}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.model_29.geometry}
-        material={materials["Default OBJ.030"]}
+        material={nodes.model_24.material}
         rotation={[Math.PI / 2, 0, 0]}
       />
     </group>
