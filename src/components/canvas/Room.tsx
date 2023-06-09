@@ -4,8 +4,7 @@ import { Suspense, useEffect, useState } from "react";
 import CanvasLoader from "../Loader";
 
 const Room = ({ isMobile }: { isMobile?: boolean }) => {
-  const glb: any = useGLTF("/MonsantoHouse/modelDraco.glb", "/draco/gltf");
-  const { nodes } = glb;
+  const { scene } = useGLTF("/MonsantoHouse/006-1.glb", "/draco/gltf/");
 
   return (
     <group
@@ -14,96 +13,7 @@ const Room = ({ isMobile }: { isMobile?: boolean }) => {
       rotation={[-Math.PI / 2, 0, 0]}
       scale={isMobile ? 1.4 : 2}
     >
-      <mesh
-        geometry={nodes.model_0.geometry}
-        material={nodes.model_0.material}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.model_1.geometry}
-        material={nodes.model_1.material}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.model_3.geometry}
-        material={nodes.model_3.material}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.model_4.geometry}
-        material={nodes.model_4.material}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.model_5.geometry}
-        material={nodes.model_5.material}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.model_6.geometry}
-        material={nodes.model_6.material}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.model_7.geometry}
-        material={nodes.model_7.material}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.model_8.geometry}
-        material={nodes.model_8.material}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.model_9.geometry}
-        material={nodes.model_9.material}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.model_10.geometry}
-        material={nodes.model_10.material}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.model_11.geometry}
-        material={nodes.model_11.material}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.model_12.geometry}
-        material={nodes.model_12.material}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.model_13.geometry}
-        material={nodes.model_13.material}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.model_14.geometry}
-        material={nodes.model_14.material}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.model_15.geometry}
-        material={nodes.model_15.material}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.model_16.geometry}
-        material={nodes.model_16.material}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.model_17.geometry}
-        material={nodes.model_17.material}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
-      <mesh
-        geometry={nodes.model_24.geometry}
-        material={nodes.model_24.material}
-        rotation={[Math.PI / 2, 0, 0]}
-      />
+      <primitive object={scene} />
     </group>
   );
 };
