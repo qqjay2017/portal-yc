@@ -1,13 +1,11 @@
 import { OrbitControls, useGLTF } from "@react-three/drei";
-import { Canvas, useLoader } from "@react-three/fiber";
+import { Canvas } from "@react-three/fiber";
 import { Suspense, useEffect, useState } from "react";
 import CanvasLoader from "../Loader";
 
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 const Room = ({ isMobile }: { isMobile?: boolean }) => {
-  const glb: any = useLoader(GLTFLoader, "/MonsantoHouse/005.glb");
-  const { scene, nodes, material } = glb;
-  console.log(isMobile, scene, "isMobile");
+  const glb: any = useGLTF("/MonsantoHouse/005.glb", "/draco/gltf");
+  const { nodes } = glb;
 
   return (
     <group
@@ -143,7 +141,7 @@ const RoomCanvas = () => {
     >
       <ambientLight castShadow intensity={0.2} />
       <spotLight
-        position={[-20, 50, 10]}
+        position={[-20, 30, -20]}
         angle={0.12}
         penumbra={1}
         intensity={1}
@@ -151,7 +149,7 @@ const RoomCanvas = () => {
         shadow-mapSize={1024}
       />
       <spotLight
-        position={[20, 50, 10]}
+        position={[20, 30, 20]}
         angle={0.12}
         penumbra={1}
         intensity={1}
