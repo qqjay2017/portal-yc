@@ -1,10 +1,10 @@
-import { OrbitControls, useGLTF } from "@react-three/drei";
+import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useEffect, useState } from "react";
 import CanvasLoader from "../Loader";
 
 const Room = ({ isMobile }: { isMobile?: boolean }) => {
-  const glb: any = useGLTF("/MonsantoHouse/005.glb", "/draco/gltf");
+  const glb: any = useGLTF("/MonsantoHouse/modelDraco.glb", "/draco/gltf");
   const { nodes } = glb;
 
   return (
@@ -166,7 +166,7 @@ const RoomCanvas = () => {
         <Room isMobile={isMobile} />
       </Suspense>
 
-      {/* <Preload all /> */}
+      <Preload all />
     </Canvas>
   );
 };
